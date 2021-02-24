@@ -32,9 +32,13 @@ export default function HomeView(props) {
     return (
     <div className="home-container">
         <div className="home-actions-container">
-            <img src="./img/starwarsLogo.png" alt="logo" />
-            <Typography variant="h2">Planet Inspector</Typography>
+            <img src="https://static-mh.content.disney.io/starwars/assets/navigation/sw_logo_stacked-336c62367939.png" alt="StarWarsLogo" className="star-wars-logo"/>
+            <Typography variant="h6" className="header">Select a Star Wars Planet!</Typography>
             <PlanetSelect options={planets} onPlanethChange={handlePlanetChange}/>
+            <Typography variant="h6" className="header">Listen the original soundtrack while you browse!</Typography>
+            <audio controls autoplay className="audio">
+                <source src="https://archive.org/download/StarWarsThemeSongByJohnWilliams/Star%20Wars%20Theme%20Song%20By%20John%20Williams.mp3" type="audio/mpeg" />
+            </audio>
             <Modal open={openModal} onClose={handleCloseModal} planetData={selectedPlanet}/>
         </div>
     </div>
