@@ -1,12 +1,9 @@
-import './App.css';
+import "./App.css";
 
-import HomeView from './components/Views/HomeView/HomeView';
+import HomeView from "./components/Views/HomeView/HomeView";
 
 function App() {
-
-  return (
-    <HomeView/>
-  );
+  return <HomeView />;
 }
 
 export default App;

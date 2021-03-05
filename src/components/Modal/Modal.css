@@ -1,0 +1,11 @@
+.dialog-header {
+  display: flex;
+  justify-content: space-between;
+}
+.dialog-content{
+  display: flex;
+}
+.planet-image{
+  max-width: 300px;
+  margin-left: 65px;
+}
