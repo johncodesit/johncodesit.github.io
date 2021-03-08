@@ -12,7 +12,8 @@ import "./Modal.css";
 export default function PlanetModal(props) {
   const { open, onClose, planetData, planetImage } = props;
 
-  //this is not a reusable component, but it was done this way since it's a small demo.
+  // this is not a reusable component, but it was done this way since it's a small demo.
+
   return (
     <>
       <Dialog open={open}>

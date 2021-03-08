@@ -9,13 +9,17 @@ export default function PlanetSelect(props) {
         <Select
           variant="outlined"
           className="select"
+          // eslint-disable-next-line react/destructuring-assignment
           onChange={props.onPlanethChange}
         >
-          {props.options.map((planet) => (
-            <option className="option" key={planet.name} value={planet.name}>
-              {planet.name}
-            </option>
-          ))}
+          {
+            // eslint-disable-next-line react/destructuring-assignment
+            props.options.map((planet) => (
+              <option className="option" key={planet.name} value={planet.name}>
+                {planet.name}
+              </option>
+            ))
+          }
         </Select>
       </FormControl>
     </div>

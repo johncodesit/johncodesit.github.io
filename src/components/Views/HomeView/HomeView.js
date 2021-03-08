@@ -3,10 +3,10 @@ import { Typography } from "@material-ui/core";
 import PlanetSelect from "../../PlanetSelect/PlanetSelect";
 import Modal from "../../Modal/Modal";
 import Logo from "../../../img/starWarsLogo.png";
-import planetsService from "../../../services/planetsService/planetsService";
+import planetsService from "../../../services/PlanetsService/planetsService";
 import "./HomeView.css";
 
-export default function HomeView(props) {
+export default function HomeView() {
   const [selectedPlanet, setSelectedPlanet] = useState({});
   const [planets, setPlanets] = useState([]);
   const [selectedPlanetImage, setSelectedPlanetImage] = useState([]);
@@ -62,17 +62,17 @@ export default function HomeView(props) {
     },
   ];
 
-  //this array could be replaced by a custom made express + node API that consumes the images from another public API
+  // this array could be replaced by a custom made express + node API that consumes the images from another public API
 
   useEffect(() => {
     async function getPlanets() {
-      const planets = await planetsService.getPlanets();
-      setPlanets(planets);
+      const planetsToShow = await planetsService.getPlanets();
+      setPlanets(planetsToShow);
     }
     getPlanets();
   }, []);
 
-  //used a 'planetService' in order to keep good practices: API calls should be done by a dedicated service. Could have use fetch instead.
+  // used a 'planetService' in order to keep good practices: API calls should be done by a dedicated service. Could have use fetch instead.
 
   function handlePlanetChange(e, data) {
     setSelectedPlanet(
@@ -100,12 +100,15 @@ export default function HomeView(props) {
         <Typography variant="h6" className="header">
           Listen the original soundtrack!
         </Typography>
+
         <audio controls className="audio">
+          <track default kind="captions" />
           <source
             src="https://archive.org/download/StarWarsThemeSongByJohnWilliams/Star%20Wars%20Theme%20Song%20By%20John%20Williams.mp3"
             type="audio/mpeg"
           />
         </audio>
+
         <Modal
           open={openModal}
           onClose={handleCloseModal}
