@@ -2,20 +2,20 @@
   display: flex;
   justify-content: space-between;
 }
-.dialog-content{
+.dialog-content {
   display: flex;
   flex-direction: row;
 }
-.planet-image{
+.planet-image {
   max-width: 300px;
   margin-left: 65px;
 }
 
 @media screen and (max-width: 600px) {
-  .dialog-content{
+  .dialog-content {
     flex-direction: column;
   }
-  .planet-image{
+  .planet-image {
     max-width: 230px;
     margin-left: 0px;
   }

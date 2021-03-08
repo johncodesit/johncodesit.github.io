@@ -25,22 +25,25 @@ export default function PlanetModal(props) {
           </Button>
         </div>
         <DialogContent className="dialog-content">
-        <div>
-          <p>Climate: {planetData.climate}</p>
-          <p>Diameter: {planetData.diameter}</p>
-          <p>Gravity: {planetData.gravity}</p>
-          <p>Population: {planetData.population}</p>
-          <p>Terrain: {planetData.terrain}</p>
-          <p>Rotation period: {planetData.rotation_period}</p>
-          <p>Terrain: {planetData.terrain}</p>
-          <p>Surface Water: {planetData.surface_water}</p>
-        </div>
-        <div>
-          <img src={planetImage.image} alt="planet" className="planet-image"></img>
-        </div>
-          
+          <div>
+            <p>Climate: {planetData.climate}</p>
+            <p>Diameter: {planetData.diameter}</p>
+            <p>Gravity: {planetData.gravity}</p>
+            <p>Population: {planetData.population}</p>
+            <p>Terrain: {planetData.terrain}</p>
+            <p>Rotation period: {planetData.rotation_period}</p>
+            <p>Terrain: {planetData.terrain}</p>
+            <p>Surface Water: {planetData.surface_water}</p>
+          </div>
+          <div>
+            <img
+              src={planetImage.image}
+              alt="planet"
+              className="planet-image"
+            />
+          </div>
         </DialogContent>
-        <DialogActions></DialogActions>
+        <DialogActions />
       </Dialog>
     </>
   );
