@@ -94,7 +94,7 @@ export default function HomeView() {
       <div className={classes.homeActionsContainer}>
         <img src={Logo} alt="StarWarsLogo" className={classes.starWarsLogo} />
         {/* By importing the logo image instead of using relative routes you save deployment issues and future bugs */}
-        <Typography variant="h6" className="header">
+        <Typography variant="h6" className={classes.header}>
           Select a Star Wars Planet!
         </Typography>
         <PlanetSelect options={planets} onPlanethChange={handlePlanetChange} />
