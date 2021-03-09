@@ -7,17 +7,18 @@ import {
   DialogTitle,
 } from "@material-ui/core";
 import CloseIcon from "@material-ui/icons/Close";
-import "./Modal.css";
+import useStyles from "./styles";
 
 export default function PlanetModal(props) {
   const { open, onClose, planetData, planetImage } = props;
+  const classes = useStyles();
 
   // this is not a reusable component, but it was done this way since it's a small demo.
 
   return (
     <>
       <Dialog open={open}>
-        <div className="dialog-header">
+        <div className={classes.dialogHeader}>
           <DialogTitle id="max-width-dialog-title">
             Planet: {planetData.name}
           </DialogTitle>
@@ -25,7 +26,7 @@ export default function PlanetModal(props) {
             <CloseIcon />
           </Button>
         </div>
-        <DialogContent className="dialog-content">
+        <DialogContent className={classes.dialogContent}>
           <div>
             <p>Climate: {planetData.climate}</p>
             <p>Diameter: {planetData.diameter}</p>
@@ -40,7 +41,7 @@ export default function PlanetModal(props) {
             <img
               src={planetImage.image}
               alt="planet"
-              className="planet-image"
+              className={classes.planetImage}
             />
           </div>
         </DialogContent>
