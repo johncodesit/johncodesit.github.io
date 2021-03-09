@@ -4,9 +4,10 @@ import PlanetSelect from "../../PlanetSelect/PlanetSelect";
 import Modal from "../../Modal/Modal";
 import Logo from "../../../img/starWarsLogo.png";
 import planetsService from "../../../services/PlanetsService/planetsService";
-import "./HomeView.css";
+import useStyles from "./styles";
 
 export default function HomeView() {
+  const classes = useStyles();
   const [selectedPlanet, setSelectedPlanet] = useState({});
   const [planets, setPlanets] = useState([]);
   const [selectedPlanetImage, setSelectedPlanetImage] = useState([]);
@@ -89,19 +90,19 @@ export default function HomeView() {
   }
 
   return (
-    <div className="home-container">
-      <div className="home-actions-container">
-        <img src={Logo} alt="StarWarsLogo" className="star-wars-logo" />
+    <div className={classes.homeContainer}>
+      <div className={classes.homeActionsContainer}>
+        <img src={Logo} alt="StarWarsLogo" className={classes.starWarsLogo} />
         {/* By importing the logo image instead of using relative routes you save deployment issues and future bugs */}
         <Typography variant="h6" className="header">
           Select a Star Wars Planet!
         </Typography>
         <PlanetSelect options={planets} onPlanethChange={handlePlanetChange} />
-        <Typography variant="h6" className="header">
+        <Typography variant="h6" className={classes.header}>
           Listen the original soundtrack!
         </Typography>
 
-        <audio controls className="audio">
+        <audio controls className={classes.audio}>
           <track default kind="captions" />
           <source
             src="https://archive.org/download/StarWarsThemeSongByJohnWilliams/Star%20Wars%20Theme%20Song%20By%20John%20Williams.mp3"
